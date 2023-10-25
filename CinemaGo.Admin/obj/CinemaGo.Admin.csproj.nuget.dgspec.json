@@ -1,37 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mukunda\\Desktop\\CinemaGo\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj": {}
+    "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mukunda\\Desktop\\CinemaGo\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj": {
+    "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mukunda\\Desktop\\CinemaGo\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj",
+        "projectUniqueName": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj",
         "projectName": "CinemaGo.Admin",
-        "projectPath": "C:\\Users\\mukunda\\Desktop\\CinemaGo\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj",
+        "projectPath": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.Admin\\CinemaGo.Admin.csproj",
         "packagesPath": "C:\\Users\\mukunda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mukunda\\Desktop\\CinemaGo\\CinemaGo\\CinemaGo.Admin\\obj\\",
+        "outputPath": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.Admin\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\mukunda\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.DataModels\\CinemaGo.DataModels.csproj": {
+                "projectPath": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.DataModels\\CinemaGo.DataModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -41,16 +41,21 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Blazor.HttpClient": {
+              "target": "Package",
+              "version": "[3.2.0-preview3.20168.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +67,77 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.DataModels\\CinemaGo.DataModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.DataModels\\CinemaGo.DataModels.csproj",
+        "projectName": "CinemaGo.DataModels",
+        "projectPath": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.DataModels\\CinemaGo.DataModels.csproj",
+        "packagesPath": "C:\\Users\\mukunda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mukunda\\Desktop\\New folder\\CinemaGo\\CinemaGo.DataModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mukunda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

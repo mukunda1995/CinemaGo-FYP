@@ -1,47 +1,49 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">CinemaGo.Admin</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">CinemaGo.Admin</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span class="oi oi-home" aria-hidden="true"></span> Dashboard
             </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="cinemas">
-                <span class="oi oi-plus" aria-hidden="true"></span> Cinemas
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="category">
+                <span class="oi oi-plus" aria-hidden="true"></span> Category
             </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="movies">
-                <span class="oi oi-plus" aria-hidden="true"></span> Movies
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="products">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Products
             </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="ads">
-                <span class="oi oi-plus" aria-hidden="true"></span>Ads
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="stock">
+                <span class="oi oi-star" aria-hidden="true"></span> Stock
             </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-plus" aria-hidden="true"></span> Discoounts
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="orders">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Orders
             </NavLink>
-        </div>
-
-    </nav>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="master">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Master
+            </NavLink>
+        </li>
+    </ul>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {

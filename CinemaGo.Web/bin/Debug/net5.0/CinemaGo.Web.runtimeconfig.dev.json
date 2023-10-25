@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\mukunda\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mukunda\\.nuget\\packages"
+    ]
+  }
+}
