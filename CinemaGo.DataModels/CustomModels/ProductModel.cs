@@ -32,6 +32,22 @@ namespace CinemaGo.DataModels.CustomModels
 
         public string CategoryName { get; set; }
 
+        [Required(ErrorMessage = "*Product Description is required")]
+
+        public string Description { get; set; }
+
+        [Required(ErrorMessage = "*Product Date is required")]
+
+        public string Date { get; set; }
+
+        [Required(ErrorMessage = "*Product Hour is required")]
+
+        public int? Hour { get; set; }
+
+        [Required(ErrorMessage = "*Product Minute is required")]
+
+        public int? Minute { get; set; }
+
         public string ImageUrl { get; set; }
 
         [Required(ErrorMessage ="*Kindly Upload Product Photo")]

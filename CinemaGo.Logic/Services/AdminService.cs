@@ -188,6 +188,10 @@ namespace CinemaGo.Logic.Services
                 _productModel.CategoryName = categoryData.Where(x => x.Id == p.CategoryId).Select(x => x.Name).FirstOrDefault();
                 _productModel.CinemaId = p.CinemaId;
                 _productModel.CinemaName = cinemaData.Where(y => y.Id == p.CinemaId).Select(y =>y.Name).FirstOrDefault();
+                _productModel.Description = p.Description;
+                _productModel.Date = p.Date;
+                _productModel.Hour = p.Hour;
+                _productModel.Minute = p.Minute;
                 _productList.Add(_productModel);
             }
             return _productList;
@@ -230,6 +234,10 @@ namespace CinemaGo.Logic.Services
                 _product.ImageUrl = newProduct.ImageUrl;
                 _product.Stock = newProduct.Stock;
                 _product.CinemaId = newProduct.CinemaId;
+                _product.Description = newProduct.Description;
+                _product.Date = newProduct.Date;
+                _product.Hour = newProduct.Hour;
+                _product.Minute = newProduct.Minute;
                 _dBContext.Add(_product);
                 _dBContext.SaveChanges();
                 return newProduct;

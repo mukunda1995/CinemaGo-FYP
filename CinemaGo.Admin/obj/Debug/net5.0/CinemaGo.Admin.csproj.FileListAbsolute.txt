@@ -95,3 +95,5 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Cin
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\ref\CinemaGo.Admin.dll
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\CinemaGo.Admin.pdb
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\CinemaGo.Admin.genruntimeconfig.cache
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Shared\NowShowing.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Shared\NowShowing.razor.g.cs

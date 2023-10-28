@@ -101,6 +101,25 @@ else
                         }
                         <ValidationMessage For="@(() => productModel.CinemaId)" />
                     </div>
+                    <div class="form-group col-3">
+                        <label>Description :</label>
+                        <InputText @bind-Value="productModel.Description" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.Description)" />
+                    </div>
+                    <div class="form-group col-3">
+                        <label>Date :</label>
+                        <InputText @bind-Value="productModel.Date" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.Date)" />
+                    </div>
+                    <div class="form-group col-3">
+                        <label>Hour :</label>
+                        <InputNumber @bind-Value="productModel.Hour" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.Hour)" />
+                    </div><div class="form-group col-3">
+                        <label>Minute :</label>
+                        <InputNumber @bind-Value="productModel.Minute" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.Minute)" />
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-3">
@@ -112,10 +131,10 @@ else
 
                         <table style="border:1px ridge #808080;">
                             <tr>
-                                @foreach (var imgsrc in imageUrls) 
+                                @foreach (var imgsrc in imageUrls)
                                 {
                                     <td>
-                                        <img src="@imgsrc"/>
+                                        <img src="@imgsrc" />
                                     </td>
                                 }
                             </tr>
@@ -146,6 +165,10 @@ else
                             <th>Stock</th>
                             <th>Category</th>
                             <th>Cinema Name</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Hour</th>
+                            <th>Minute</th>
                             @*<th style ="width : 80px;">Edit?</th>*@
                             <th style="width:80px;">Delete?</th>
                         </tr>
@@ -161,6 +184,10 @@ else
                             <td>@prod.Stock</td>
                             <td>@prod.CategoryName</td>
                             <td>@prod.CinemaName</td>
+                            <td>@prod.Description</td>
+                            <td>@prod.Date</td>
+                            <td>@prod.Hour</td>
+                            <td>@prod.Minute</td>
                             @*<td> <input type ="button" class="btn btn-primary" value="Edit" @onclick="(()=> EditButtonClick(prod))"/></td>*@
                             <td> <input type="button" class="btn btn-primary" value="Delete" @onclick="(()=> DeleteButtonClick(prod))" /></td>
                         </tr>

@@ -14,5 +14,9 @@ namespace CinemaGo.DataModels.Models
         public string ImageUrl { get; set; }
         public int? Stock { get; set; }
         public int? CinemaId { get; set; }
+        public string Description { get; set; }
+        public string Date { get; set; }
+        public int? Hour { get; set; }
+        public int? Minute { get; set; }
     }
 }

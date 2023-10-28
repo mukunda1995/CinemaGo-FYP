@@ -131,6 +131,14 @@ namespace CinemaGo.DataModels.Models
             {
                 entity.ToTable("Product");
 
+                entity.Property(e => e.Date)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.ImageUrl)
                     .HasMaxLength(100)
                     .IsUnicode(false);

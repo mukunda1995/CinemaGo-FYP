@@ -111,7 +111,7 @@ using CinemaGo.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 139 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Shared\MainLayout.razor"
+#line 140 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Shared\MainLayout.razor"
       
     public int cartCount = 0;
     public int layoutState = 0;
