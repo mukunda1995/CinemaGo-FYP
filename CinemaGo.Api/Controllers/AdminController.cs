@@ -33,6 +33,44 @@ namespace CinemaGo.Api.Controllers
             return Ok(data);
         }
 
+        
+
+        [HttpPost]
+        [Route("SaveCinema")]
+
+        public IActionResult SaveCinema(CinemaModel newCinema)
+        {
+            var data = _adminService.SaveCinema(newCinema);
+            return Ok(data);
+        }
+
+        [HttpGet]
+        [Route("GetCinemas")]
+
+        public IActionResult GetCinemas()
+        {
+            var data = _adminService.GetCinemas();
+            return Ok(data);
+        }
+
+        [HttpPost]
+        [Route("UpdateCinema")]
+
+        public IActionResult UpdateCinema(CinemaModel cinemaToUpdate)
+        {
+            var data = _adminService.UpdateCinema(cinemaToUpdate);
+            return Ok(data);
+        }
+
+        [HttpPost]
+        [Route("DeleteCinema")]
+
+        public IActionResult DeleteCinema(CinemaModel cinemaToDelete)
+        {
+            var data = _adminService.DeleteCinema(cinemaToDelete);
+            return Ok(data);
+        }
+
         [HttpPost]
         [Route("SaveCategory")]
 

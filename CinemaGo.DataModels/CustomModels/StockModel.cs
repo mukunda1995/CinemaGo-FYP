@@ -17,5 +17,7 @@ namespace CinemaGo.DataModels.CustomModels
         public int? NewStock { get; set; }
 
         public string CategoryName { get; set; }
+
+        public string CinemaName { get; set; }
     }
 }

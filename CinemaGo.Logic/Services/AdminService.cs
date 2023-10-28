@@ -72,6 +72,63 @@ namespace CinemaGo.Logic.Services
                 throw;
             }
         }
+
+        public CinemaModel SaveCinema(CinemaModel newCinema)
+        {
+            try
+            {
+                Cinema _cinema = new Cinema();
+                _cinema.Name = newCinema.Name;
+                _dBContext.Add(_cinema);
+                _dBContext.SaveChanges();
+                return newCinema;
+            }
+            catch (Exception exp)
+            {
+                throw;
+            }
+        }
+
+        public List<CinemaModel> GetCinemas()
+        {
+            var data = _dBContext.Cinemas.ToList();
+            List<CinemaModel> _cinemaList = new List<CinemaModel>();
+            foreach (var c in data)
+            {
+                CinemaModel _cinemaModel = new CinemaModel();
+                _cinemaModel.Id = c.Id;
+                _cinemaModel.Name = c.Name;
+                _cinemaList.Add(_cinemaModel);
+            }
+            return _cinemaList;
+        }
+
+        public bool UpdateCinema(CinemaModel cinemaToUpdate)
+        {
+            bool flag = false;
+            var _cinema = _dBContext.Cinemas.Where(x => x.Id == cinemaToUpdate.Id).First();
+            if (_cinema != null)
+            {
+                _cinema.Name = cinemaToUpdate.Name;
+                _dBContext.Cinemas.Update(_cinema);
+                _dBContext.SaveChanges();
+                flag = true;
+            }
+            return flag;
+        }
+
+        public bool DeleteCinema(CinemaModel cinemaToDelete)
+        {
+            bool flag = false;
+            var _cinema = _dBContext.Cinemas.Where(x => x.Id == cinemaToDelete.Id).First();
+            if (_cinema != null)
+            {
+                _dBContext.Cinemas.Remove(_cinema);
+                _dBContext.SaveChanges();
+                flag = true;
+            }
+            return flag;
+        }
         public List<CategoryModel> GetCategories()
         {
             var data = _dBContext.Categories.ToList();
@@ -115,6 +172,7 @@ namespace CinemaGo.Logic.Services
 
         public List<ProductModel> GetProducts()
         {
+            List<Cinema> cinemaData = _dBContext.Cinemas.ToList();
             List<Category> categoryData = _dBContext.Categories.ToList();
             List<Product> productData = _dBContext.Products.ToList();
             List<ProductModel> _productList = new List<ProductModel>();
@@ -128,6 +186,8 @@ namespace CinemaGo.Logic.Services
                 _productModel.ImageUrl = p.ImageUrl;
                 _productModel.CategoryId = p.CategoryId;
                 _productModel.CategoryName = categoryData.Where(x => x.Id == p.CategoryId).Select(x => x.Name).FirstOrDefault();
+                _productModel.CinemaId = p.CinemaId;
+                _productModel.CinemaName = cinemaData.Where(y => y.Id == p.CinemaId).Select(y =>y.Name).FirstOrDefault();
                 _productList.Add(_productModel);
             }
             return _productList;
@@ -166,14 +226,15 @@ namespace CinemaGo.Logic.Services
                 Product _product = new Product();
                 _product.Name = newProduct.Name;
                 _product.Price = newProduct.Price;
-                _product.ImageUrl = newProduct.ImageUrl;
                 _product.CategoryId = newProduct.CategoryId;
+                _product.ImageUrl = newProduct.ImageUrl;
                 _product.Stock = newProduct.Stock;
+                _product.CinemaId = newProduct.CinemaId;
                 _dBContext.Add(_product);
                 _dBContext.SaveChanges();
                 return newProduct;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -183,6 +244,7 @@ namespace CinemaGo.Logic.Services
         {
             List<StockModel> productStock = new List<StockModel>();
             List<Category> categoryData = _dBContext.Categories.ToList();
+            List<Cinema> cinemaData = _dBContext.Cinemas.ToList();
             List<Product> productData = _dBContext.Products.ToList();
             foreach (var p in productData)
             {
@@ -191,6 +253,7 @@ namespace CinemaGo.Logic.Services
                 _productModel.Name = p.Name;
                 _productModel.Stock = p.Stock;
                 _productModel.CategoryName = categoryData.Where(x => x.Id == p.CategoryId).Select(x => x.Name).First();
+                _productModel.CinemaName = cinemaData.Where(x => x.Id == p.CinemaId).Select(x => x.Name).First();
                 productStock.Add(_productModel);
             }
             return productStock;
@@ -209,6 +272,8 @@ namespace CinemaGo.Logic.Services
             }
             return flag;
         }
+
+        
     }
 }
 

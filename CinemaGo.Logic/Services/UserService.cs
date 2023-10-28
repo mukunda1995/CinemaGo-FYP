@@ -37,9 +37,24 @@ namespace CinemaGo.Logic.Services
             return _categoryList;
         }
 
+        public List<CinemaModel> GetCinemas()
+        {
+            var data = _dBContext.Cinemas.ToList();
+            List<CinemaModel> _cinemaList = new List<CinemaModel>();
+            foreach (var c in data)
+            {
+                CinemaModel _cinemaModel = new CinemaModel();
+                _cinemaModel.Id = c.Id;
+                _cinemaModel.Name = c.Name;
+                _cinemaList.Add(_cinemaModel);
+            }
+            return _cinemaList;
+        }
+
         public List<ProductModel> GetProductByCategoryId(int categoryId) 
         {
-            var data = _dBContext.Products.Where(x => x.CategoryId == categoryId).ToList(); 
+            var data = _dBContext.Products.Where(x => x.CategoryId == categoryId).ToList();
+            
             List<ProductModel> _productList = new List<ProductModel>();
             foreach (var p in data) 
             {
@@ -54,6 +69,8 @@ namespace CinemaGo.Logic.Services
                 _productModel.ImageUrl = p.ImageUrl;
 
                 _productModel.Stock = p.Stock;
+
+                _productModel.CinemaId = p.CinemaId;
 
                 _productList.Add(_productModel);
             }

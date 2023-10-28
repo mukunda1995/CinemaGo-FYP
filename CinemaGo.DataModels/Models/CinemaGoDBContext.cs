@@ -19,6 +19,7 @@ namespace CinemaGo.DataModels.Models
 
         public virtual DbSet<AdminInfo> AdminInfos { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Cinema> Cinemas { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomerOrder> CustomerOrders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
@@ -45,6 +46,11 @@ namespace CinemaGo.DataModels.Models
 
                 entity.Property(e => e.CreatedOn).HasMaxLength(25);
 
+                entity.Property(e => e.Dd)
+                    .HasMaxLength(10)
+                    .HasColumnName("dd")
+                    .IsFixedLength(true);
+
                 entity.Property(e => e.Email).HasMaxLength(30);
 
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
@@ -61,6 +67,15 @@ namespace CinemaGo.DataModels.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("Category");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Cinema>(entity =>
+            {
+                entity.ToTable("Cinema");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)

@@ -13,5 +13,6 @@ namespace CinemaGo.DataModels.Models
         public int? CategoryId { get; set; }
         public string ImageUrl { get; set; }
         public int? Stock { get; set; }
+        public int? CinemaId { get; set; }
     }
 }

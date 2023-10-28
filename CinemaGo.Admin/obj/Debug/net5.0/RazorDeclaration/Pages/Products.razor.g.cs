@@ -119,14 +119,16 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 198 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\Pages\Products.razor"
+#line 214 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\Pages\Products.razor"
  
     [CascadingParameter]
     public EventCallback notify { get; set; }
     public List<CategoryModel> categoryList { get; set; }
+    public List<CinemaModel> cinemaList { get; set; }
     public ProductModel productModel { get; set; }
     public List<ProductModel> productList { get; set; }
     public int categoryId { get; set; }
+    public int cinemaId { get; set; }
     IReadOnlyList<IBrowserFile> selectedFiles;
     List<string> imageUrls = new List<string>();
     public ProductModel productToUpdate { get; set; }
@@ -139,6 +141,7 @@ using System.IO;
     protected override async Task OnInitializedAsync()
     {
         productModel = new ProductModel();
+        await GetCinemas();
         await GetCategories();
         await GetProducts();
     }
@@ -146,6 +149,10 @@ using System.IO;
     private async Task GetCategories()
     {
         categoryList = await adminPanelService.GetCategories();
+    }
+    private async Task GetCinemas()
+    {
+        cinemaList = await adminPanelService.GetCinemas();
     }
 
     private async Task GetProducts()
@@ -158,7 +165,7 @@ using System.IO;
         MemoryStream ms = new MemoryStream();
         await stream.CopyToAsync(ms);
         stream.Close();
-
+        productModel.CinemaId = cinemaId;
         productModel.CategoryId = categoryId;
         productModel.FileName = selectedFiles.FirstOrDefault().Name;
         productModel.FileContent = ms.ToArray();
@@ -215,6 +222,17 @@ using System.IO;
         {
             categoryId = Convert.ToInt32(categoryEvent.Value);
             productModel.CategoryId = categoryId;
+            this.StateHasChanged();
+        }
+
+    }
+
+    private void CinemaClicked(ChangeEventArgs cinemaEvent)
+    {
+        if (!string.IsNullOrEmpty(Convert.ToString(cinemaEvent.Value)))
+        {
+            cinemaId = Convert.ToInt32(cinemaEvent.Value);
+            productModel.CinemaId = cinemaId;
             this.StateHasChanged();
         }
 

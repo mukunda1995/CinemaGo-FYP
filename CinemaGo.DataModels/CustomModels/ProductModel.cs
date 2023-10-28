@@ -21,8 +21,13 @@ namespace CinemaGo.DataModels.CustomModels
 
         public int? Stock { get; set; }
 
-        [Required(ErrorMessage ="*Product Category is required")]
+        [Required(ErrorMessage ="*Product Cinema is required")]
 
+        public int? CinemaId { get; set; }
+
+        public string CinemaName { get; set; }
+
+        [Required(ErrorMessage = "*Product Category is required")]
         public int? CategoryId { get; set; }
 
         public string CategoryName { get; set; }

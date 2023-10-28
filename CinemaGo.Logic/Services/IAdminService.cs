@@ -8,6 +8,10 @@ namespace CinemaGo.Logic.Services
     public interface IAdminService
     {
         ResponseModel AdminLogin(LoginModel loginModel);
+        CinemaModel SaveCinema(CinemaModel addCinemaModel);
+        List<CinemaModel> GetCinemas();
+        bool UpdateCinema(CinemaModel cinemaToUpdate);
+        bool DeleteCinema(CinemaModel cinemaToDelete);
         CategoryModel SaveCategory(CategoryModel newCategory);
         List<CategoryModel> GetCategories();
         bool UpdateCategory(CategoryModel categoryToUpdate);

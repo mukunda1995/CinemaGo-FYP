@@ -14,5 +14,6 @@ namespace CinemaGo.DataModels.Models
         public string LastLogin { get; set; }
         public string CreatedOn { get; set; }
         public string UpdatedOn { get; set; }
+        public string Dd { get; set; }
     }
 }

@@ -20,6 +20,28 @@ namespace CinemaGo.Admin.Services
         {
             return await httpClient.PostJsonAsync<ResponseModel>("api/admin/AdminLogin", loginModel);
         }
+        
+
+        public async Task<CinemaModel> SaveCinema(CinemaModel newCinema)
+        {
+            return await httpClient.PostJsonAsync<CinemaModel>("api/admin/SaveCinema", newCinema);
+        }
+
+        public async Task<List<CinemaModel>> GetCinemas()
+        {
+            return await httpClient.GetJsonAsync<List<CinemaModel>>("api/admin/GetCinemas");
+        }
+
+        public async Task<bool> UpdateCinema(CinemaModel cinemaToUpdate)
+        {
+            return await httpClient.PostJsonAsync<bool>("api/admin/UpdateCinema", cinemaToUpdate);
+        }
+
+        public async Task<bool> DeleteCinema(CinemaModel cinemaToDelete)
+        {
+            return await httpClient.PostJsonAsync<bool>("api/admin/DeleteCinema", cinemaToDelete);
+        }
+
         public async Task<CategoryModel> SaveCategory(CategoryModel newCategory)
         {
             return await httpClient.PostJsonAsync<CategoryModel>("api/admin/SaveCategory", newCategory);

@@ -24,5 +24,6 @@ namespace CinemaGo.Logic.Services
         Task<string> MakePaymentStripe(string cardNumber, int expMonth, int expYear, string cvc, decimal value);
 
         Task<string> MakePaymentPaypal(double total);
+        public List<CinemaModel> GetCinemas();
     }
 }

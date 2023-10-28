@@ -9,6 +9,12 @@ namespace CinemaGo.Admin.Services
     public interface IAdminPanelService
     {
         Task<ResponseModel> AdminLogin(LoginModel loginModel);
+        Task<CinemaModel> SaveCinema(CinemaModel newCinema);
+        Task<List<CinemaModel>> GetCinemas();
+
+        Task<bool> UpdateCinema(CinemaModel cinemaToUpdate);
+
+        Task<bool> DeleteCinema(CinemaModel cinemaToDelete);
         Task<CategoryModel> SaveCategory(CategoryModel newCategory);
         Task<List<CategoryModel>> GetCategories();
 
