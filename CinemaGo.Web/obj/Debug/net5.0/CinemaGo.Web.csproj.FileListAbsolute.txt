@@ -90,3 +90,7 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Cinem
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\CinemaGo.Web.genruntimeconfig.cache
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Shared\NavbarUser.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Shared\NavbarUser.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\Showtime.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\Showtime.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\Trailer.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\Trailer.razor.g.cs
