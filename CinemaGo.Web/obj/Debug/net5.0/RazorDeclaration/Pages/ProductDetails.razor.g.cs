@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace CinemaGo.Web.Components
+namespace CinemaGo.Web.Pages
 {
     #line hidden
     using System;
@@ -90,20 +90,21 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Components\DisplayAllContent.razor"
+#line 4 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ProductDetails.razor"
 using CinemaGo.DataModels.CustomModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Components\DisplayAllContent.razor"
+#line 5 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ProductDetails.razor"
 using CinemaGo.Web.Services;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class DisplayAllContent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/product/{name}")]
+    public partial class ProductDetails : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,16 +112,15 @@ using CinemaGo.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 84 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Components\DisplayAllContent.razor"
+#line 98 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ProductDetails.razor"
        
-
+    [Parameter]
+    public string Name { get; set; }
     [CascadingParameter]
     public EventCallback notify { get; set; }
     public ProductModel productModel { get; set; }
-    public List<ProductModel> products { get; set; }
     public List<ProductModel> productList { get; set; }
-    public List<CartModel> myCart { get; set; }
-    public bool cartFlag = false;
+    public int prodSelected;
 
     protected override async Task OnInitializedAsync()
     {
@@ -133,96 +133,15 @@ using CinemaGo.Web.Services;
         productList = await userPanelService.GetProducts();
     }
 
-    private async Task AddToCart_Click(ProductModel productClicked)
-    {
-        cartFlag = true;
-
-        var result = await sessionStorage.GetAsync<List<CartModel>>("myCart");
-
-        if (!result.Success)
-        {
-            myCart = new List<CartModel>();
-
-            if (productClicked.CartFlag)
-            {
-                var existing_product = myCart.Where(x => x.ProductId == productClicked.Id).FirstOrDefault();
-                if (existing_product != null)
-                {
-                    myCart.Remove(existing_product);
-                    await sessionStorage.SetAsync("myCart", myCart);
-                }
-            }
-            else
-            {
-
-                CartModel cm = new CartModel();
-
-                cm.ProductId = productClicked.Id;
-
-                cm.Quantity = 1;
-                cm.AvailableStock = Convert.ToInt32(productClicked.Stock);
-
-                cm.ProductName = productClicked.Name;
-
-                cm.ProductImage = productClicked.ImageUrl;
-
-                cm.Price = Convert.ToInt32(productClicked.Price);
-
-                myCart.Add(cm);
-
-                await sessionStorage.SetAsync("myCart", myCart);
-            }
-        }
-        else
-        {
-            myCart = result.Value;
-            if (productClicked.CartFlag)
-            {
-                var existing_product = myCart.Where(x => x.ProductId == productClicked.Id).FirstOrDefault();
-                if (existing_product != null)
-                {
-                    myCart.Remove(existing_product);
-                    await sessionStorage.SetAsync("myCart", myCart);
-                }
-            }
-            else
-            {
-
-                CartModel cm = new CartModel();
-
-                cm.ProductId = productClicked.Id;
-
-                cm.Quantity = 1;
-                cm.AvailableStock = Convert.ToInt32(productClicked.Stock);
-
-                cm.ProductName = productClicked.Name;
-
-                cm.ProductImage = productClicked.ImageUrl;
-
-                cm.Price = Convert.ToInt32(productClicked.Price);
-
-                myCart.Add(cm);
-
-                await sessionStorage.SetAsync("myCart", myCart);
-            }
-        }
-        await notify.InvokeAsync();
-    }
-
-
-
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            var result = await sessionStorage.GetAsync<List<CartModel>>("myCart");
-            if (result.Success)
-            {
-                cartFlag = true;
-            }
+            await notify.InvokeAsync();
         }
 
     }
+
 
 #line default
 #line hidden

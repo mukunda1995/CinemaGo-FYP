@@ -102,3 +102,5 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Components\DisplayAllContent.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Components\SeatType.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Components\SeatType.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\ProductDetails.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\ProductDetails.razor.g.cs
