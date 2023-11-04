@@ -10,6 +10,7 @@ namespace CinemaGo.Logic.Services
     public interface IUserService
     {
         List<CategoryModel> GetCategories();
+        List<ProductModel> GetProducts();
         List<ProductModel> GetProductByCategoryId(int categoryId);
         ResponseModel RegisterUser(RegisterModel registerModel);
 

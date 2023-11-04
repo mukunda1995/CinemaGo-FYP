@@ -48,6 +48,27 @@ namespace CinemaGo.DataModels.CustomModels
 
         public int? Minute { get; set; }
 
+        [Required(ErrorMessage = "*Product TrailerUrl is required")]
+
+        public string TrailerUrl { get; set; }
+
+        [Required(ErrorMessage = "*Product Language is required")]
+
+        public string Language { get; set; }
+
+        [Required(ErrorMessage = "*Product ReleaseDate is required")]
+
+        public string ReleaseDate { get; set; }
+
+        [Required(ErrorMessage = "*Product RunningTime is required")]
+
+        public string RunningTime { get; set; }
+
+        [Required(ErrorMessage = "*Product Status is required")]
+
+        public string Status { get; set; }
+
+
         public string ImageUrl { get; set; }
 
         [Required(ErrorMessage ="*Kindly Upload Product Photo")]

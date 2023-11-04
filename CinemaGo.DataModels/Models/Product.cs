@@ -18,5 +18,13 @@ namespace CinemaGo.DataModels.Models
         public string Date { get; set; }
         public int? Hour { get; set; }
         public int? Minute { get; set; }
+        public string TrailerUrl { get; set; }
+
+        public string Language { get; set; }
+
+        public string ReleaseDate { get; set; }
+
+        public string RunningTime { get; set; }
+        public string Status { get; set; }
     }
 }

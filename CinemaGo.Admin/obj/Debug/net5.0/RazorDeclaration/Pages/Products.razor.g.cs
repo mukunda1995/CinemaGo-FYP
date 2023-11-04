@@ -119,7 +119,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 241 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\Pages\Products.razor"
+#line 283 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\Pages\Products.razor"
  
     [CascadingParameter]
     public EventCallback notify { get; set; }

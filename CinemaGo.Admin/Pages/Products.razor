@@ -56,7 +56,7 @@ else
         <h4 class="card-header">Add Movies</h4>
         <div class="card-body">
             <EditForm Model="@productModel" OnValidSubmit="SaveProduct">
-                <DataAnnotationsValidator/>
+                <DataAnnotationsValidator />
                 <div class="form-row">
                     <div class="form-group col-3">
                         <label>Name :</label>
@@ -115,10 +115,37 @@ else
                         <label>Hour :</label>
                         <InputNumber @bind-Value="productModel.Hour" class="form-control" />
                         <ValidationMessage For="@(() => productModel.Hour)" />
-                    </div><div class="form-group col-3">
+                    </div>
+                    <div class="form-group col-3">
                         <label>Minute :</label>
                         <InputNumber @bind-Value="productModel.Minute" class="form-control" />
                         <ValidationMessage For="@(() => productModel.Minute)" />
+                    </div>
+                    <div class="form-group col-3">
+                        <label>TrailerUrl :</label>
+                        <InputText @bind-Value="productModel.TrailerUrl" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.TrailerUrl)" />
+                    </div>
+
+                    <div class="form-group col-3">
+                        <label>Language :</label>
+                        <InputText @bind-Value="productModel.Language" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.Language)" />
+                    </div>
+                    <div class="form-group col-3">
+                        <label>ReleaseDate :</label>
+                        <InputText @bind-Value="productModel.ReleaseDate" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.ReleaseDate)" />
+                    </div>
+                    <div class="form-group col-3">
+                        <label>RunningTime :</label>
+                        <InputText @bind-Value="productModel.RunningTime" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.RunningTime)" />
+                    </div>
+                    <div class="form-group col-3">
+                        <label>Status :</label>
+                        <InputText @bind-Value="productModel.Status" class="form-control" />
+                        <ValidationMessage For="@(() => productModel.Status)" />
                     </div>
                 </div>
                 <div class="form-row">
@@ -143,7 +170,7 @@ else
                 </div>
                 <div class="text-left">
                     <input type="submit" class="btn btn-primary" value="Save" />
-                    <input type="button" class="btn btn-primary" value="Clear" @onclick="ClearForm" /> 
+                    <input type="button" class="btn btn-primary" value="Clear" @onclick="ClearForm" />
 
                 </div>
             </EditForm>
@@ -169,6 +196,12 @@ else
                             <th>Date</th>
                             <th>Hour</th>
                             <th>Minute</th>
+                            <th>TrailerUrl</th>
+                            <th>Language</th>
+                            <th>ReleaseDate</th>
+                            <th>RunningTime</th>
+                            <th>Status</th>
+                            <th>ImageUrl</th>
                             @*<th style ="width : 80px;">Edit?</th>*@
                             <th style="width:80px;">Delete?</th>
                         </tr>
@@ -188,6 +221,15 @@ else
                             <td>@prod.Date</td>
                             <td>@prod.Hour</td>
                             <td>@prod.Minute</td>
+                            <td>@prod.TrailerUrl</td>
+                            <td>@prod.Language</td>
+                            <td>@prod.ReleaseDate</td>
+                            <td>@prod.RunningTime</td>
+                            <td>@prod.Status</td>
+                            
+                            <td><img src="http://localhost:36313/@prod.ImageUrl" style="width: 100%; height:150px; border-radius: 1px; "></td>
+                            
+
                             @*<td> <input type ="button" class="btn btn-primary" value="Edit" @onclick="(()=> EditButtonClick(prod))"/></td>*@
                             <td> <input type="button" class="btn btn-primary" value="Delete" @onclick="(()=> DeleteButtonClick(prod))" /></td>
                         </tr>

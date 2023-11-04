@@ -29,6 +29,14 @@ namespace CinemaGo.Api.Controllers
             var data = _userService.GetCategories();
             return Ok(data);
         }
+        [HttpGet]
+        [Route("GetProducts")]
+
+        public IActionResult GetProducts()
+        {
+            var data = _userService.GetProducts();
+            return Ok(data);
+        }
 
         [HttpGet]
         [Route("GetProductByCategoryId")]

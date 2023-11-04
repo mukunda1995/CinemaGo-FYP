@@ -11,6 +11,8 @@ namespace CinemaGo.Web.Services
     {
         Task<bool> IsUserLoggedIn();
         Task<List<CategoryModel>> GetCategories();
+
+        Task<List<ProductModel>> GetProducts();
         Task<List<ProductModel>> GetProductByCategoryId(int categoryId);
 
         Task<ResponseModel> RegisterUser(RegisterModel registerModel);

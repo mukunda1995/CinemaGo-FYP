@@ -41,6 +41,11 @@ namespace CinemaGo.Web.Services
 
         }
 
+        public async Task<List<ProductModel>> GetProducts()
+        {
+            return await httpClient.GetJsonAsync<List<ProductModel>>("api/user/GetProducts");
+        }
+
         public async Task<List<ProductModel>> GetProductByCategoryId(int categoryId)
         {
             return await httpClient.GetJsonAsync<List<ProductModel>>("api/user/GetProductByCategoryId/?categoryId=" + categoryId);

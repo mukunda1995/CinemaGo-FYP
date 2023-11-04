@@ -3,10 +3,10 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\bin\Debug\netco
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\bin\Debug\netcoreapp3.1\CinemaGo.DataModels.runtimeconfig.dev.json
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\bin\Debug\netcoreapp3.1\CinemaGo.DataModels.dll
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\bin\Debug\netcoreapp3.1\CinemaGo.DataModels.pdb
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.csproj.AssemblyReference.cache
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.AssemblyInfoInputs.cache
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.AssemblyInfo.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.csproj.CoreCompileInputs.cache
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.dll
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.pdb
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.genruntimeconfig.cache
-C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.DataModels\obj\Debug\netcoreapp3.1\CinemaGo.DataModels.csproj.AssemblyReference.cache

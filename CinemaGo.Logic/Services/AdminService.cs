@@ -192,6 +192,12 @@ namespace CinemaGo.Logic.Services
                 _productModel.Date = p.Date;
                 _productModel.Hour = p.Hour;
                 _productModel.Minute = p.Minute;
+                _productModel.TrailerUrl = p.TrailerUrl;
+                _productModel.Language = p.Language;
+                _productModel.ReleaseDate = p.ReleaseDate;
+                _productModel.RunningTime = p.RunningTime;
+                _productModel.Status = p.Status;
+
                 _productList.Add(_productModel);
             }
             return _productList;
@@ -238,6 +244,11 @@ namespace CinemaGo.Logic.Services
                 _product.Date = newProduct.Date;
                 _product.Hour = newProduct.Hour;
                 _product.Minute = newProduct.Minute;
+                _product.TrailerUrl = newProduct.TrailerUrl;
+                _product.Language = newProduct.Language;
+                _product.ReleaseDate = newProduct.ReleaseDate;
+                _product.RunningTime = newProduct.RunningTime;
+                _product.Status = newProduct.Status;
                 _dBContext.Add(_product);
                 _dBContext.SaveChanges();
                 return newProduct;

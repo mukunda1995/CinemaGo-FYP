@@ -112,14 +112,13 @@ using CinemaGo.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 124 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\Index.razor"
+#line 126 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\Index.razor"
        
     public List<CategoryModel> categories { get; set; }
     public List<ProductModel> products { get; set; }
     public string categoryName = string.Empty;
     public bool cartFlag = false;
     public List<CartModel> myCart { get; set; }
-
     [CascadingParameter]
     public EventCallback notify { get; set; }
 
@@ -127,6 +126,7 @@ using CinemaGo.Web.Services;
     protected override async Task OnInitializedAsync()
     {
         await GetCatgories();
+
     }
 
     private async Task GetCatgories()
@@ -144,12 +144,13 @@ using CinemaGo.Web.Services;
     {
         categoryName = category.Name;
         products = await userPanelService.GetProductByCategoryId(category.Id);
-        if(products !=null && products.Count > 0)
+        if (products != null && products.Count > 0)
         {
             await updateCartText();
         }
 
     }
+
 
     private async Task AddToCart_Click(ProductModel productClicked)
     {

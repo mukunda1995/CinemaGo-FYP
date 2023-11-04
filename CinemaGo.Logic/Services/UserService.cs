@@ -37,6 +37,39 @@ namespace CinemaGo.Logic.Services
             return _categoryList;
         }
 
+        public List<ProductModel> GetProducts()
+        {
+            List<Cinema> cinemaData = _dBContext.Cinemas.ToList();
+            List<Category> categoryData = _dBContext.Categories.ToList();
+            List<DataModels.Models.Product> productData = _dBContext.Products.ToList();
+            List<ProductModel> _productList = new List<ProductModel>();
+            foreach (var p in productData)
+            {
+                ProductModel _productModel = new ProductModel();
+                _productModel.Id = p.Id;
+                _productModel.Name = p.Name;
+                _productModel.Price = p.Price;
+                _productModel.Stock = p.Stock;
+                _productModel.ImageUrl = p.ImageUrl;
+                _productModel.CategoryId = p.CategoryId;
+                _productModel.CategoryName = categoryData.Where(x => x.Id == p.CategoryId).Select(x => x.Name).FirstOrDefault();
+                _productModel.CinemaId = p.CinemaId;
+                _productModel.CinemaName = cinemaData.Where(y => y.Id == p.CinemaId).Select(y => y.Name).FirstOrDefault();
+                _productModel.Description = p.Description;
+                _productModel.Date = p.Date;
+                _productModel.Hour = p.Hour;
+                _productModel.Minute = p.Minute;
+                _productModel.TrailerUrl = p.TrailerUrl;
+                _productModel.Language = p.Language;
+                _productModel.ReleaseDate = p.ReleaseDate;
+                _productModel.RunningTime = p.RunningTime;
+                _productModel.Status = p.Status;
+
+                _productList.Add(_productModel);
+            }
+            return _productList;
+        }
+
         public List<CinemaModel> GetCinemas()
         {
             var data = _dBContext.Cinemas.ToList();
@@ -72,10 +105,23 @@ namespace CinemaGo.Logic.Services
 
                 _productModel.CinemaId = p.CinemaId;
 
+                _productModel.Description = p.Description;
+                _productModel.Date = p.Date;
+                _productModel.Hour = p.Hour;
+                _productModel.Minute = p.Minute;
+                _productModel.TrailerUrl = p.TrailerUrl;
+                _productModel.Language = p.Language; 
+                _productModel.ReleaseDate = p.ReleaseDate;
+                _productModel.RunningTime = p.RunningTime;
+                _productModel.Status = p.Status;
+                
+
+
                 _productList.Add(_productModel);
             }
             return _productList;
         }
+
 
         public ResponseModel RegisterUser(RegisterModel registerModel) 
         {
@@ -371,6 +417,7 @@ namespace CinemaGo.Logic.Services
                 return ex.Message;
             }
         }
+
 
     }
 }
