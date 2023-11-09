@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace CinemaGo.Web.Components
+namespace CinemaGo.Web.Pages
 {
     #line hidden
     using System;
@@ -89,70 +89,14 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Components\DisplayAllContent.razor"
-using CinemaGo.DataModels.CustomModels;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Components\DisplayAllContent.razor"
-using CinemaGo.Web.Services;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class DisplayAllContent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/reward")]
+    public partial class Reward : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 85 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Components\DisplayAllContent.razor"
-       
-
-    [CascadingParameter]
-    public EventCallback notify { get; set; }
-    public ProductModel productModel { get; set; }
-    public List<ProductModel> products { get; set; }
-    public List<ProductModel> productList { get; set; }
-
-
-    protected override async Task OnInitializedAsync()
-    {
-        productModel = new ProductModel();
-        await GetProducts();
-    }
-
-    private async Task GetProducts()
-    {
-        productList = await userPanelService.GetProducts();
-    }
-
-
-
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            if (firstRender)
-            {
-                await notify.InvokeAsync();
-            }
-        }
-
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ProtectedSessionStorage sessionStorage { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserPanelService userPanelService { get; set; }
     }
 }
 #pragma warning restore 1591

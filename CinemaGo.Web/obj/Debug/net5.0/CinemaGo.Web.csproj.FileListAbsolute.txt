@@ -59,7 +59,6 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\Register.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\SelectSeat.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\Showtime.razor.g.cs
-C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\Trailer.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Shared\NavbarUser.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -77,7 +76,6 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\Register.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\SelectSeat.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\Showtime.razor.g.cs
-C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\Trailer.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Shared\NavbarUser.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -104,3 +102,5 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Components\SeatType.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\ProductDetails.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\ProductDetails.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\RazorDeclaration\Pages\Reward.razor.g.cs
+C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\obj\Debug\net5.0\Razor\Pages\Reward.razor.g.cs

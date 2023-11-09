@@ -26,5 +26,11 @@ namespace CinemaGo.Logic.Services
 
         Task<string> MakePaymentPaypal(double total);
         public List<CinemaModel> GetCinemas();
+
+        List<ContactUsModel> GetContactUss();
+
+        ContactUsModel SaveContactUs(ContactUsModel newContactUs);
+
+        bool DeleteContactUs(ContactUsModel contactusToDelete);
     }
 }

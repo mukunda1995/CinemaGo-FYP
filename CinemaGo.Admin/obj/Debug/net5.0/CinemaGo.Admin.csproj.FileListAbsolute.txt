@@ -58,7 +58,6 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Raz
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Pages\Orders.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Pages\Products.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Pages\Stock.razor.g.cs
-C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Shared\NowShowing.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -75,7 +74,6 @@ C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Raz
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Pages\Orders.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Pages\Products.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Pages\Stock.razor.g.cs
-C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Shared\NowShowing.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs

@@ -112,7 +112,7 @@ using CinemaGo.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 137 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\Login.razor"
+#line 136 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\Login.razor"
        
     [CascadingParameter]
     public EventCallback notify { get; set; }

@@ -28,6 +28,12 @@ namespace CinemaGo.Web.Services
 
         Task<ResponseModel> ChangePassword(PasswordModel passwordModel);
 
+        Task<bool> DeleteContactUs(ContactUsModel contactusToDelete);
+
+        Task<List<ContactUsModel>> GetContactUss();
+
+        Task<ContactUsModel> SaveContactUs(ContactUsModel newContactUs);
+
 
     }
 }

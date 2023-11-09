@@ -20,6 +20,7 @@ namespace CinemaGo.DataModels.Models
         public virtual DbSet<AdminInfo> AdminInfos { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Cinema> Cinemas { get; set; }
+        public virtual DbSet<ContactUs> ContactUss { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<CustomerOrder> CustomerOrders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
@@ -79,6 +80,31 @@ namespace CinemaGo.DataModels.Models
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<ContactUs>(entity =>
+            {
+                entity.ToTable("ContactUs");
+
+                entity.Property(e => e.Comment)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PhoneNumber)
+                    .HasMaxLength(25)
                     .IsUnicode(false);
             });
 
@@ -143,7 +169,27 @@ namespace CinemaGo.DataModels.Models
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Language)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ReleaseDate)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RunningTime)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Status)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TrailerUrl)
                     .HasMaxLength(100)
                     .IsUnicode(false);
             });

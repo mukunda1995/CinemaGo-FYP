@@ -112,7 +112,7 @@ using CinemaGo.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 126 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\Index.razor"
+#line 204 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\Index.razor"
        
     public List<CategoryModel> categories { get; set; }
     public List<ProductModel> products { get; set; }
@@ -122,11 +122,25 @@ using CinemaGo.Web.Services;
     [CascadingParameter]
     public EventCallback notify { get; set; }
 
+    public string userSearch = " ";
+    [Parameter]
+    public string Name { get; set; }
+    [CascadingParameter]
+    public ProductModel productModel { get; set; }
+    public List<ProductModel> productList { get; set; }
+    public int prodSelected;
+
+
 
     protected override async Task OnInitializedAsync()
     {
-        await GetCatgories();
+        productModel = new ProductModel();
+        await GetProducts();
+    }
 
+    private async Task GetProducts()
+    {
+        productList = await userPanelService.GetProducts();
     }
 
     private async Task GetCatgories()

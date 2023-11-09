@@ -89,6 +89,20 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ContactUs.razor"
+using CinemaGo.DataModels.CustomModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ContactUs.razor"
+using CinemaGo.Web.Services;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/contactus")]
     public partial class ContactUs : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -97,6 +111,93 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 164 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ContactUs.razor"
+       
+    [CascadingParameter]
+    public EventCallback notify { get; set; }
+    public ContactUsModel contactusModel { get; set; }
+    public List<ContactUsModel> contactusList { get; set; }
+    public bool showDeletePopup = false;
+    public bool successPopup = false;
+    string Message = string.Empty;
+    public ContactUsModel contactusToDelete { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        contactusModel = new ContactUsModel();
+
+        await GetContactUss();
+    }
+
+    private async Task GetContactUss()
+    {
+        contactusList = await userPanelService.GetContactUss();
+    }
+
+    private async Task DeleteContactUs()
+    {
+
+        bool flag = await userPanelService.DeleteContactUs(contactusToDelete);
+        ToggleDeletePopup();
+        if (flag)
+        {
+            Message = "Message Deleted Successfully !!";
+        }
+        else
+        {
+            Message = "Message Not Deleted, Try Again !!";
+        }
+
+        ToggleSuccessPopup();
+        contactusToDelete = new ContactUsModel();
+        await GetContactUss();
+    }
+
+    private async Task SaveContactUs()
+    {
+
+        await userPanelService.SaveContactUs(contactusModel);
+        await GetContactUss();
+        ClearForm();
+    }
+
+    private void ClearForm()
+    {
+        contactusModel = new ContactUsModel();
+
+    }
+
+    private void DeleteButtonClick(ContactUsModel _contactusToDelete)
+    {
+        contactusToDelete = _contactusToDelete;
+        ToggleDeletePopup();
+    }
+    private void ToggleDeletePopup()
+    {
+        showDeletePopup = showDeletePopup == true ? false : true;
+    }
+
+    private void ToggleSuccessPopup()
+    {
+        successPopup = successPopup == true ? false : true;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await notify.InvokeAsync();
+        }
+
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ProtectedSessionStorage sessionStorage { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUserPanelService userPanelService { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -86,6 +86,21 @@ namespace CinemaGo.Web.Services
             return await httpClient.PostJsonAsync<ResponseModel>("api/user/ChangePassword", passwordModel);
         }
 
+        public async Task<bool> DeleteContactUs(ContactUsModel contactusToDelete)
+        {
+            return await httpClient.PostJsonAsync<bool>("api/user/DeleteContactUs", contactusToDelete);
+        }
+
+        public async Task<List<ContactUsModel>> GetContactUss()
+        {
+            return await httpClient.GetJsonAsync<List<ContactUsModel>>("api/user/GetContactUss");
+        }
+
+        public async Task<ContactUsModel> SaveContactUs(ContactUsModel newContactUs)
+        {
+            return await httpClient.PostJsonAsync<ContactUsModel>("api/user/SaveContactUs", newContactUs);
+        }
+
     }   
 
 } 

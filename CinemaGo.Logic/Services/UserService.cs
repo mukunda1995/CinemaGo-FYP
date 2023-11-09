@@ -37,6 +37,26 @@ namespace CinemaGo.Logic.Services
             return _categoryList;
         }
 
+        public ContactUsModel SaveContactUs(ContactUsModel newContactUs)
+        {
+            try
+            {
+                ContactUs _contactus = new ContactUs();
+                _contactus.FirstName = newContactUs.FirstName;
+                _contactus.LastName = newContactUs.LastName;
+                _contactus.Email = newContactUs.Email;
+                _contactus.PhoneNumber = newContactUs.PhoneNumber;
+                _contactus.Comment = newContactUs.Comment;
+                
+                _dBContext.Add(_contactus);
+                _dBContext.SaveChanges();
+                return newContactUs;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public List<ProductModel> GetProducts()
         {
             List<Cinema> cinemaData = _dBContext.Cinemas.ToList();
@@ -68,6 +88,38 @@ namespace CinemaGo.Logic.Services
                 _productList.Add(_productModel);
             }
             return _productList;
+        }
+        public bool DeleteContactUs(ContactUsModel contactusToDelete)
+        {
+            bool flag = false;
+            var _contactus = _dBContext.ContactUss.Where(x => x.Id == contactusToDelete.Id).FirstOrDefault();
+            if (_contactus != null)
+            {
+                _dBContext.ContactUss.Remove(_contactus);
+                _dBContext.SaveChanges();
+                flag = true;
+            }
+            return flag;
+        }
+        public List<ContactUsModel> GetContactUss()
+        {
+            List<DataModels.Models.ContactUs> contactusData = _dBContext.ContactUss.ToList();
+            //var contactusData = _dBContext.ContactUss.ToList();
+            List<ContactUsModel> _contactusList = new List<ContactUsModel>();
+            foreach (var p in contactusData)
+            {
+                ContactUsModel _contactusModel = new ContactUsModel();
+                _contactusModel.Id = p.Id;
+                _contactusModel.FirstName = p.FirstName;
+                _contactusModel.LastName = p.LastName;
+                _contactusModel.Email = p.Email;
+                _contactusModel.PhoneNumber = p.PhoneNumber;
+                _contactusModel.Comment = p.Comment;
+              
+
+                _contactusList.Add(_contactusModel);
+            }
+            return _contactusList;
         }
 
         public List<CinemaModel> GetCinemas()

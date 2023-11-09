@@ -63,7 +63,34 @@ namespace CinemaGo.Api.Controllers
             return Ok(data);
         }
 
-        
+        [HttpPost]
+        [Route("SaveContactUs")]
+
+        public IActionResult SaveContactUs(ContactUsModel newContactUs)
+        {
+            var data = _userService.SaveContactUs(newContactUs);
+            return Ok(data);
+        }
+
+        [HttpGet]
+        [Route("GetContactUs")]
+
+        public IActionResult GetContactUss()
+        {
+            var data = _userService.GetContactUss();
+            return Ok(data);
+        }
+
+        [HttpPost]
+        [Route("DeleteContactUs")]
+
+        public IActionResult DeleteContactUs(ContactUsModel contactusToDelete)
+        {
+            var data = _userService.DeleteContactUs(contactusToDelete);
+            return Ok(data);
+        }
+
+
 
         [HttpGet]
         [Route("GetOrdersByCustomerId")]

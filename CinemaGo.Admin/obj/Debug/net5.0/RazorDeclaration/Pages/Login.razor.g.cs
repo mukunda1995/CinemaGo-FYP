@@ -112,7 +112,7 @@ using CinemaGo.Admin.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 93 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\Pages\Login.razor"
+#line 94 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Admin\Pages\Login.razor"
        
 
     [CascadingParameter]

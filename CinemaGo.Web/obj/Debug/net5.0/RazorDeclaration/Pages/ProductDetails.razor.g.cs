@@ -112,7 +112,7 @@ using CinemaGo.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 98 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ProductDetails.razor"
+#line 107 "C:\Users\mukunda\Desktop\New folder\CinemaGo\CinemaGo.Web\Pages\ProductDetails.razor"
        
     [Parameter]
     public string Name { get; set; }
@@ -121,6 +121,8 @@ using CinemaGo.Web.Services;
     public ProductModel productModel { get; set; }
     public List<ProductModel> productList { get; set; }
     public int prodSelected;
+    public List<CartModel> myCart { get; set; }
+    public bool cartFlag = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -133,11 +135,93 @@ using CinemaGo.Web.Services;
         productList = await userPanelService.GetProducts();
     }
 
+    private async Task AddToCart_Click(ProductModel productClicked)
+    {
+        cartFlag = true;
+
+        var result = await sessionStorage.GetAsync<List<CartModel>>("myCart");
+        
+
+        if (!result.Success)
+        {
+            myCart = new List<CartModel>();
+
+            if (productClicked.CartFlag)
+            {
+                var existing_product = myCart.Where(x => x.ProductId == productClicked.Id).FirstOrDefault();
+                if (existing_product != null)
+                {
+                    myCart.Remove(existing_product);
+                    await sessionStorage.SetAsync("myCart", myCart);
+                    
+                }
+            }
+            else
+            {
+
+                CartModel cm = new CartModel();
+
+                cm.ProductId = productClicked.Id;
+
+                cm.Quantity = 1;
+                cm.AvailableStock = Convert.ToInt32(productClicked.Stock);
+
+                cm.ProductName = productClicked.Name;
+
+                cm.ProductImage = productClicked.ImageUrl;
+
+                cm.Price = Convert.ToInt32(productClicked.Price);
+
+                myCart.Add(cm);
+
+                await sessionStorage.SetAsync("myCart", myCart);
+            }
+        }
+        else
+        {
+            myCart = result.Value;
+            if (productClicked.CartFlag)
+            {
+                var existing_product = myCart.Where(x => x.ProductId == productClicked.Id).FirstOrDefault();
+                if (existing_product != null)
+                {
+                    myCart.Remove(existing_product);
+                    await sessionStorage.SetAsync("myCart", myCart);
+                }
+            }
+            else
+            {
+
+                CartModel cm = new CartModel();
+
+                cm.ProductId = productClicked.Id;
+
+                cm.Quantity = 1;
+                cm.AvailableStock = Convert.ToInt32(productClicked.Stock);
+
+                cm.ProductName = productClicked.Name;
+
+                cm.ProductImage = productClicked.ImageUrl;
+
+                cm.Price = Convert.ToInt32(productClicked.Price);
+
+                myCart.Add(cm);
+
+                await sessionStorage.SetAsync("myCart", myCart);
+            }
+        }
+        await notify.InvokeAsync();
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            await notify.InvokeAsync();
+            var result = await sessionStorage.GetAsync<List<CartModel>>("myCart");
+            if (result.Success)
+            {
+                cartFlag = true;
+            }
         }
 
     }
